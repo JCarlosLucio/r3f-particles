@@ -1,20 +1,22 @@
+import { PointMaterial } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
-import { Mesh } from 'three';
+import { Points } from 'three';
 
 const Torus = () => {
-  const meshRef = useRef<Mesh>(null);
+  const ref = useRef<Points>(null);
 
   useFrame(() => {
-    if (!meshRef.current) return;
-    meshRef.current.rotation.y += 0.01;
+    if (!ref.current) return;
+    ref.current.rotation.y += 0.01;
   });
 
   return (
-    <mesh ref={meshRef}>
+    <points ref={ref}>
       <torusGeometry args={[0.7, 0.2, 16, 100]} />
-      <meshBasicMaterial color="red" />
-    </mesh>
+      <PointMaterial size={0.005} />
+      <PointMaterial size={0.005} />
+    </points>
   );
 };
 
