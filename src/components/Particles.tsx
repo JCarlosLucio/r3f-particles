@@ -7,9 +7,14 @@ import useMousePosition from '../hooks/useMousePosition';
 interface ParticlesProps {
   path?: string;
   color?: string;
+  rotationModifier?: number;
 }
 
-const Particles = ({ path = '/cross.png', color = 'red' }: ParticlesProps) => {
+const Particles = ({
+  path = '/cross.png',
+  color = 'red',
+  rotationModifier = 1,
+}: ParticlesProps) => {
   const ref = useRef<Points>(null);
 
   const crossMap = useLoader(TextureLoader, path);
@@ -21,16 +26,16 @@ const Particles = ({ path = '/cross.png', color = 'red' }: ParticlesProps) => {
     () => (Math.random() - 0.5) * 4,
   );
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     if (!ref.current) return;
-    const elapsedTime = clock.getElapsedTime();
+    ref.current.rotation.y += 0.0001 * rotationModifier;
+    ref.current.rotation.x += 0.0001 * rotationModifier;
 
-    ref.current.rotation.y = -elapsedTime * 0.008;
-    ref.current.rotation.x = elapsedTime * 0.008;
-
-    if (mouseX > 0) {
-      ref.current.rotation.y = -mouseX * elapsedTime * 0.000008;
-      ref.current.rotation.x = mouseY * elapsedTime * 0.000008;
+    if (mouseX !== 0) {
+      const x = mouseX - window.innerWidth / 2;
+      const y = mouseY - window.innerHeight / 2;
+      ref.current.rotation.y += x * 0.000001 * rotationModifier;
+      ref.current.rotation.x += y * 0.000001 * rotationModifier;
     }
   });
 
