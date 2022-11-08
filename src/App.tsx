@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 
 import { Suspense } from 'react';
 import Lights from './components/Lights';
+import Particles from './components/Particles';
 import Torus from './components/Torus';
 
 const App = () => {
@@ -12,6 +13,8 @@ const App = () => {
         <Lights />
         <Suspense fallback={null}>
           <Torus />
+          <Particles />
+          <Particles path="/circle.png" color="white" />
         </Suspense>
         <PerspectiveCamera makeDefault fov={75} position={[0, 0, 2]} />
         <OrbitControls />
