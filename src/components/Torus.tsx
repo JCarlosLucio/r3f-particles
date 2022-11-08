@@ -6,10 +6,9 @@ import { Points } from 'three';
 const Torus = () => {
   const ref = useRef<Points>(null);
 
-  useFrame(({ clock }) => {
+  useFrame(() => {
     if (!ref.current) return;
-    const elapsedTime = clock.getElapsedTime();
-    ref.current.rotation.y += 0.001 * elapsedTime;
+    ref.current.rotation.y += 0.01;
   });
 
   return (
