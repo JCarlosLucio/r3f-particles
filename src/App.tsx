@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
 import { Suspense } from 'react';
@@ -14,6 +14,7 @@ const App = () => {
           <Torus />
         </Suspense>
         <PerspectiveCamera makeDefault fov={75} position={[0, 0, 2]} />
+        <OrbitControls />
       </Canvas>
     </>
   );
