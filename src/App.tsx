@@ -14,7 +14,7 @@ const App = () => {
         <Suspense fallback={null}>
           <Torus />
           <Particles />
-          <Particles path="/circle.png" color="white" />
+          <Particles path="/circle.png" color="white" rotationModifier={0.5} />
         </Suspense>
         <PerspectiveCamera makeDefault fov={75} position={[0, 0, 2]} />
         <OrbitControls />
