@@ -37,7 +37,7 @@
     "vite": "^3.2.0"
   },
   "lint-staged": {
-    "src/*.{js,ts}": [
+    "src/**/*.{js,jsx,ts,tsx,css,md}": [
       "prettier --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md}\"",
       "eslint --fix"
     ],
