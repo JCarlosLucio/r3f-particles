@@ -1,9 +1,11 @@
-import ParticlesScene from './components/ParticlesScene';
+import BlocksScene from './components/BlocksScene';
+// import ParticlesScene from './components/ParticlesScene';
 
 const App = () => {
   return (
     <>
-      <ParticlesScene />
+      <BlocksScene />
+      {/* <ParticlesScene /> */}
     </>
   );
 };
