@@ -1,5 +1,15 @@
 import { snoise3 } from './noise';
 
+// vertex shader
+export const vertexShader = `
+  varying vec2 vUv;
+
+  void main() {
+    vUv = uv;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`;
+
 // fragment shader
 export const fragmentShader = `
   precision highp float;
