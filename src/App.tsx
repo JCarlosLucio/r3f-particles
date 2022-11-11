@@ -1,11 +1,14 @@
-import BlocksScene from './components/BlocksScene';
+// import BlocksScene from './components/BlocksScene';
 // import ParticlesScene from './components/ParticlesScene';
+
+import PlaneNoiseScene from './components/PlaneNoiseScene';
 
 const App = () => {
   return (
     <>
-      <BlocksScene />
+      {/* <BlocksScene /> */}
       {/* <ParticlesScene /> */}
+      <PlaneNoiseScene />
     </>
   );
 };
