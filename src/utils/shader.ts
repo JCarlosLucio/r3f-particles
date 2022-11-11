@@ -8,12 +8,15 @@ export const vertexShader = `
     vUv = uv;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
-`;
+  `;
 
 // fragment shader
+// Changed "#pragma glslify: noise = require(glsl-noise/simplex/3d.glsl);" that imported from glsl-noise package to simply using snoise3 from ./noise
+// Avoiding the installation of babel-plugin-glsl, glsl-noise, @babel-core, and babel-plugin-macros packages
 export const fragmentShader = `
   precision highp float;
 
+  // #pragma glslify: noise = require(glsl-noise/simplex/3d.glsl);
   ${snoise3}
 
   uniform float scale;
