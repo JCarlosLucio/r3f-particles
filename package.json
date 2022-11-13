@@ -14,11 +14,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@react-spring/three": "^9.5.5",
+    "@react-spring/web": "^9.5.5",
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.146.0"
+    "three": "^0.146.0",
+    "three-stdlib": "^2.17.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.22",
@@ -37,7 +40,7 @@
     "vite": "^3.2.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,css,md}": [
+    "src/**/*.{js,jsx,ts,tsx,md}": [
       "prettier --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md}\"",
       "eslint --fix"
     ],
