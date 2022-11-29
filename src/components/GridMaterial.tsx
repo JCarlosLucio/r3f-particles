@@ -9,6 +9,7 @@ type GridMaterialImpl = {
 
 // Add <gridMaterial /> to JSX.IntrinsicElements
 // could have given gridMaterial any name (ex. <myMaterial/>)
+// https://docs.pmnd.rs/react-three-fiber/tutorials/typescript#extending-jsx-intrinsic-elements
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -20,10 +21,6 @@ declare global {
 const GridMaterial = shaderMaterial(
   {
     bg: new Color('#111033'),
-    yellow: new Color('#ffd600'),
-    orange: new Color('#ff7300'),
-    pink: new Color('#ff4685'),
-    purple: new Color('#6e2cac'),
     blue: new Color('#00ffff'),
     green: new Color('#cfff58'),
   },
