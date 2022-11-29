@@ -8,7 +8,7 @@ export const vertexShader = `
     vUv = uv;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
-  `;
+`;
 
 // fragment shader
 // Changed "#pragma glslify: noise = require(glsl-noise/simplex/3d.glsl);" that imported from glsl-noise package to simply using snoise3 from ./noise
@@ -80,6 +80,7 @@ export const gradientShader = `
   #ifdef GL_ES
   precision mediump float;
   #endif
+  
   uniform vec3 bg;
   uniform vec3 blue;
   uniform vec3 green;
@@ -94,6 +95,7 @@ export const gradientShader = `
     // bottom-left
     vec2 bl = step(w, st);
     float pct = bl.x * bl.y;
+
     // top-right
     vec2 tr = step(w, 1.0 - st);
     pct *= tr.x * tr.y;
@@ -107,9 +109,12 @@ export const gradientShader = `
   
   void main(void){
     vec2 st = tile(vUv, 10.0);
+
     float c = box(st, vec2(0.02));
     c *= box(vUv, vec2(0.005));
+
     vec3 color = gradient(c);
+
     gl_FragColor = vec4(color, 1.0);
   }
 `;
