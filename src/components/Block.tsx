@@ -1,8 +1,8 @@
 import { Extrude } from '@react-three/drei';
 import { useMemo } from 'react';
 import { Shape } from 'three';
+import { SIDE } from '../utils/contants';
 
-const SIDE = 10;
 const extrudeSettings = { steps: 2, depth: SIDE, bevelEnabled: false };
 
 const Block = () => {

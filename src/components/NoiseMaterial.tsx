@@ -9,6 +9,7 @@ type NoiseMaterialImpl = {
 
 // Add <noiseMaterial /> to JSX.IntrinsicElements
 // could have given noiseMaterial any name (ex. <myMaterial/>)
+// https://docs.pmnd.rs/react-three-fiber/tutorials/typescript#extending-jsx-intrinsic-elements
 declare global {
   namespace JSX {
     interface IntrinsicElements {
