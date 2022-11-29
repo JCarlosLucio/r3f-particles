@@ -1,7 +1,10 @@
-// import BlocksScene from './components/BlocksScene';
-// import ParticlesScene from './components/ParticlesScene';
+import { Center } from '@react-three/drei';
+import Block from './components/Block';
+import CDDScene from './components/CDDScene';
+import Effects from './components/Effects';
+import Grid from './components/Grid';
 import Label from './components/Label';
-import PlaneNoiseScene from './components/PlaneNoiseScene';
+import PlaneNoise from './components/PlaneNoise';
 import { useCDDState } from './hooks/useCDDState';
 
 const App = () => {
@@ -9,9 +12,14 @@ const App = () => {
 
   return (
     <>
-      {/* <BlocksScene /> */}
-      {/* <ParticlesScene /> */}
-      <PlaneNoiseScene />
+      <CDDScene>
+        <Center>
+          <Block />
+        </Center>
+        <Grid />
+        <PlaneNoise />
+        <Effects />
+      </CDDScene>
       <Label step={cddStep} />
     </>
   );
